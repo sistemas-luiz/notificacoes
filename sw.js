@@ -1,15 +1,15 @@
 /**
  * Service Worker App 2 - Notificações
- * Correção: Imports do Firebase e Forçar Ativação (SkipWaiting)
+ * Correção: Imports do Firebase, Forçar Ativação (SkipWaiting) e Atualização da Chave API
  */
 
 // 1. Imports Obrigatórios do Firebase (Mesma versão do Index.html)
 importScripts('https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js');
 importScripts('https://www.gstatic.com/firebasejs/10.7.1/firebase-messaging-compat.js');
 
-// 2. Configuração (Tem que ser igual à do Index.html)
+// 2. Configuração com a nova chave da API Firebase do usuário
 const firebaseConfig = {
-  apiKey: "AIzaSyCqq447JT58S_zQNKL0jz6eZTVKRK69TCE",
+  apiKey: "AIzaSyCn89LRlH1lksZ811--jb2jlB2iZS5NH1s",
   authDomain: "pontoweb-54c7d.firebaseapp.com",
   projectId: "pontoweb-54c7d",
   storageBucket: "pontoweb-54c7d.firebasestorage.app",
@@ -45,20 +45,17 @@ try {
 // 4. Instalação e Ativação Imediata (Resolve o problema do "Aguardando SW Ready")
 self.addEventListener('install', (event) => {
   console.log('[SW] Instalado.');
-  // Força o SW a assumir o controle imediatamente, sem esperar fechar a aba
   self.skipWaiting();
 });
 
 self.addEventListener('activate', (event) => {
   console.log('[SW] Ativado.');
-  // Reivindica o controle de todas as abas abertas imediatamente
   event.waitUntil(clients.claim());
 });
 
 // 5. Clique na Notificação
 self.addEventListener('notificationclick', (event) => {
   event.notification.close();
-  // Tenta focar na aba aberta ou abrir o app
   event.waitUntil(
     clients.matchAll({type: 'window'}).then( windowClients => {
       for (var i = 0; i < windowClients.length; i++) {
