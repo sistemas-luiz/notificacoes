@@ -1,21 +1,20 @@
 /**
  * Service Worker App 2 - Notificações
- * Correção: Imports do Firebase, Forçar Ativação (SkipWaiting) e Atualização da Chave API
+ * Correção: Imports do Firebase, Forçar Ativação (SkipWaiting) e Atualização para o Novo Projeto (pontoweb-dc8dd)
  */
 
-// 1. Imports Obrigatórios do Firebase (Mesma versão do Index.html)
+// 1. Imports Obrigatórios do Firebase (Compatível com o index)
 importScripts('https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js');
 importScripts('https://www.gstatic.com/firebasejs/10.7.1/firebase-messaging-compat.js');
 
-// 2. Configuração com a nova chave da API Firebase do usuário
+// 2. Configuração com as novas credenciais do seu projeto Firebase
 const firebaseConfig = {
   apiKey: "AIzaSyCn89LRlH1lksZ811--jb2jlB2iZS5NH1s",
-  authDomain: "pontoweb-54c7d.firebaseapp.com",
-  projectId: "pontoweb-54c7d",
-  storageBucket: "pontoweb-54c7d.firebasestorage.app",
-  messagingSenderId: "287775717012",
-  appId: "1:287775717012:web:342536a3403a47fdf3e681",
-  measurementId: "G-SPSZRR73MX"
+  authDomain: "pontoweb-dc8dd.firebaseapp.com",
+  projectId: "pontoweb-dc8dd",
+  storageBucket: "pontoweb-dc8dd.firebasestorage.app",
+  messagingSenderId: "465750633035",
+  appId: "1:465750633035:web:282efd14b807e2a3823bce"
 };
 
 // 3. Inicializa Firebase no Background
