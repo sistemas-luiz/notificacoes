@@ -44,8 +44,9 @@
       const API_URL = "https://script.google.com/macros/s/AKfycbwYSqYPf-8ckGroc3TlZHD2n5LhTSDD04auBHEgXxzo_OkJCfbO-Jv3PlKcNtPbV-36MA/exec";
       const VAPID_KEY = 'BH6SQVZylnLjOXl3ZLM3YjC4-pPUpDIHrUYjksCex06uFTxe5lCOn4AIT5hlKQxv7x9p7BIgJKKgqrp-cb7-HpY';
 
+      // Configuração atualizada com a nova chave da API Firebase
       const firebaseConfig = {
-        apiKey: "AIzaSyCqq447JT58S_zQNKL0jz6eZTVKRK69TCE",
+        apiKey: "AIzaSyCn89LRlH1lksZ811--jb2jlB2iZS5NH1s",
         authDomain: "pontoweb-54c7d.firebaseapp.com",
         projectId: "pontoweb-54c7d",
         storageBucket: "pontoweb-54c7d.firebasestorage.app",
@@ -83,7 +84,6 @@
         
         useEffect(() => {
           if (ref.current) {
-            // Cria o ícone no elemento referenciado
             lucide.createIcons({
               root: ref.current,
               nameAttr: 'data-lucide',
@@ -92,7 +92,6 @@
           }
         }, [name, size, className]);
 
-        // Usa span e dangerouslySetInnerHTML para evitar que o React reclame da remoção do <i> pelo Lucide
         return (
           <span 
             ref={ref} 
@@ -108,7 +107,7 @@
 
         const colors = {
           success: { bg: 'bg-green-100', text: 'text-green-600', icon: 'check-circle' },
-          error: { bg: 'bg-red-100', text: 'text-red-600', icon: 'triangle-alert' }, // Nome corrigido para Lucide
+          error: { bg: 'bg-red-100', text: 'text-red-600', icon: 'triangle-alert' },
           info: { bg: 'bg-blue-100', text: 'text-blue-600', icon: 'info' }
         };
         const theme = colors[type] || colors.info;
@@ -138,14 +137,12 @@
         const [fcmToken, setFcmToken] = useState(null);
         const [config, setConfig] = useState({ entrada: '', saida: '', antecedencia: 10 });
 
-        // Estado do Modal
         const [modal, setModal] = useState({ isOpen: false, title: '', message: '', type: 'info' });
 
         const showAlert = (title, message, type = 'info') => {
           setModal({ isOpen: true, title, message, type });
         };
 
-        // 1. Carregamento Inicial
         useEffect(() => {
           localStorage.removeItem('ponto_fcm_token_sent'); 
 
@@ -168,7 +165,6 @@
           if (savedConfig) setConfig(JSON.parse(savedConfig));
         }, []);
 
-        // 2. Monitoramento de Token
         useEffect(() => {
            if (user) checkAndSyncToken();
         }, [user]);
@@ -292,7 +288,6 @@
            } finally { setLoading(false); }
         };
 
-        // --- TELA DE LOGIN ---
         if (!user) return (
            <div className="flex flex-col items-center justify-center min-h-screen fade-in">
               <Modal isOpen={modal.isOpen} type={modal.type} title={modal.title} message={modal.message} onClose={() => setModal({...modal, isOpen: false})} />
@@ -310,7 +305,6 @@
            </div>
         );
 
-        // --- TELA PRINCIPAL ---
         return (
            <div className="pb-10 fade-in w-full">
               <Modal isOpen={modal.isOpen} type={modal.type} title={modal.title} message={modal.message} onClose={() => setModal({...modal, isOpen: false})} />
