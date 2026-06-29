@@ -44,15 +44,14 @@
       const API_URL = "https://script.google.com/macros/s/AKfycbwYSqYPf-8ckGroc3TlZHD2n5LhTSDD04auBHEgXxzo_OkJCfbO-Jv3PlKcNtPbV-36MA/exec";
       const VAPID_KEY = 'BH6SQVZylnLjOXl3ZLM3YjC4-pPUpDIHrUYjksCex06uFTxe5lCOn4AIT5hlKQxv7x9p7BIgJKKgqrp-cb7-HpY';
 
-      // Configuração atualizada com a nova chave da API Firebase
+      // Configuração atualizada com as novas credenciais do Firebase
       const firebaseConfig = {
         apiKey: "AIzaSyCn89LRlH1lksZ811--jb2jlB2iZS5NH1s",
-        authDomain: "pontoweb-54c7d.firebaseapp.com",
-        projectId: "pontoweb-54c7d",
-        storageBucket: "pontoweb-54c7d.firebasestorage.app",
-        messagingSenderId: "287775717012",
-        appId: "1:287775717012:web:342536a3403a47fdf3e681",
-        measurementId: "G-SPSZRR73MX"
+        authDomain: "pontoweb-dc8dd.firebaseapp.com",
+        projectId: "pontoweb-dc8dd",
+        storageBucket: "pontoweb-dc8dd.firebasestorage.app",
+        messagingSenderId: "465750633035",
+        appId: "1:465750633035:web:282efd14b807e2a3823bce"
       };
 
       let messaging = null;
@@ -391,7 +390,7 @@
 
                  <button onClick={saveConfig} disabled={loading} className="w-full mt-8 bg-blue-600 text-white py-4 rounded-xl font-bold text-lg shadow-lg shadow-blue-200 active:scale-95 hover:bg-blue-700 transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:scale-100">
                     {loading ? <div className="animate-spin rounded-full h-5 w-5 border-2 border-white border-t-transparent"></div> : 'Salvar Alterações'}
-                 </button>
+                  </button>
               </div>
            </div>
         );
