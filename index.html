@@ -42,9 +42,11 @@
     <!-- CONFIGURAÇÃO E SHIM -->
     <script>
       const API_URL = "https://script.google.com/macros/s/AKfycbwYSqYPf-8ckGroc3TlZHD2n5LhTSDD04auBHEgXxzo_OkJCfbO-Jv3PlKcNtPbV-36MA/exec";
-      const VAPID_KEY = 'BH6SQVZylnLjOXl3ZLM3YjC4-pPUpDIHrUYjksCex06uFTxe5lCOn4AIT5hlKQxv7x9p7BIgJKKgqrp-cb7-HpY';
+      
+      // Sincronizado com a nova chave VAPID gerada no painel pontoweb-dc8dd
+      const VAPID_KEY = 'BBoKkzbg5v-PjBLtxOv7oQz-o9SEcnpdYu2cAawC_2WHozRfOyYnESz_lss2yA4BGnuO76II-NbwoKUqfaEN-S0';
 
-      // Configuração atualizada com as novas credenciais do Firebase
+      // Configuração com as novas credenciais do seu projeto Firebase
       const firebaseConfig = {
         apiKey: "AIzaSyCn89LRlH1lksZ811--jb2jlB2iZS5NH1s",
         authDomain: "pontoweb-dc8dd.firebaseapp.com",
@@ -390,7 +392,7 @@
 
                  <button onClick={saveConfig} disabled={loading} className="w-full mt-8 bg-blue-600 text-white py-4 rounded-xl font-bold text-lg shadow-lg shadow-blue-200 active:scale-95 hover:bg-blue-700 transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:scale-100">
                     {loading ? <div className="animate-spin rounded-full h-5 w-5 border-2 border-white border-t-transparent"></div> : 'Salvar Alterações'}
-                  </button>
+                 </button>
               </div>
            </div>
         );
